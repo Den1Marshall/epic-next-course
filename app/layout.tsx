@@ -3,6 +3,7 @@ import '@/app/index.css';
 import { FMReducedMotion } from '@/shared/ui/FMReducedMotion';
 import { startupImage } from './startupImage';
 import { AriaLinkProvider } from '@/app/AriaLinkProvider';
+import { NextUIProvider } from '@nextui-org/react';
 
 export const metadata: Metadata = {
   title: 'CHANGETHIS',
@@ -54,7 +55,9 @@ export default function RootLayout({
     >
       <body className='h-full py-safe px-safe-or-5 dark:bg-black dark:text-white'>
         <FMReducedMotion>
-          <AriaLinkProvider>{children}</AriaLinkProvider>
+          <AriaLinkProvider>
+            <NextUIProvider>{children}</NextUIProvider>
+          </AriaLinkProvider>
         </FMReducedMotion>
       </body>
     </html>
